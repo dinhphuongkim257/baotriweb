@@ -1,0 +1,157 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #636e72;
+    --accent-color: #0984e3;
+    --border-color: rgba(0, 0, 0, 0.05);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 8px rgba(0, 0, 0, 0.02);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.animate-in {
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: #f1f2f6;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+}
+
+.icon-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.wifi-icon {
+    width: 64px;
+    height: 64px;
+    color: #dfe6e9;
+    transition: color 0.3s ease;
+}
+
+.card:hover .wifi-icon {
+    color: #b2bec3;
+}
+
+.wifi-slash {
+    color: #fab1a0;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+
+.divider {
+    width: 40px;
+    height: 3px;
+    background-color: #000;
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+    opacity: 0.1;
+}
+
+.content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+}
+
+.content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.content a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.content a:hover {
+    border-bottom-color: var(--text-primary);
+}
+
+.hope-text {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.footer {
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    color: #b2bec3;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .card {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .title {
+        font-size: 1.25rem;
+    }
+}
